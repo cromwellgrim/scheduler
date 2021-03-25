@@ -1,8 +1,7 @@
 import React from "react";
 
-
 import "components/Application.scss";
-import useApplicationData from 'hooks/useApplicationData'
+import useApplicationData from "hooks/useApplicationData";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment/index";
 import {
@@ -16,7 +15,7 @@ export default function Application(props) {
 		state,
 		setDay,
 		bookInterview,
-		cancelInterview
+		cancelInterview,
 	} = useApplicationData();
 
 	const interviewers = getInterviewersForDay(state, state.day);
@@ -55,7 +54,7 @@ export default function Application(props) {
 			</section>
 			<section className="schedule">
 				{appts}
-				<Appointment key="last" time="8PM" />
+				<Appointment key="last" time="5PM" />
 			</section>
 		</main>
 	);

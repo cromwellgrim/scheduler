@@ -17,19 +17,18 @@ export default function Form(props) {
 		props.onCancel();
 	};
 
-	// const save = () => {
-	//   props.onSave()
-	// }
-
-	//interviewers={props.interviewers}
-
+	/* validates both that student name is not blank and that an interviewer is chosen before saving */
 	function validate() {
-		if ( name === "" ) {
+		if (name === "") {
 			setError("Student name cannot be blank");
 			return;
 		}
-		setError("")
-		props.onSave(name, interviewer);		
+		if (!interviewer) {
+			setError("Please choose an Interviewer");
+			return;
+		}
+		setError("");
+		props.onSave(name, interviewer);
 	}
 
 	return (
